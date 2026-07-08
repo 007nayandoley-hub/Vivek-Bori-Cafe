@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #121212;
+  color: #F5F1E8;
+}
+
+/* Signature element: coffee ring-stain divider between sections.
+   Placed absolutely, low-opacity, echoes the cup rings you'd find
+   on a cafe table — ties the brand back to its own world instead
+   of a generic gradient blob. */
+.ring-stain {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(201, 162, 39, 0.18);
+  pointer-events: none;
+}
+.ring-stain::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: 9999px;
+  border: 1px solid rgba(201, 162, 39, 0.1);
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #C9A227;
+  outline-offset: 3px;
+}
